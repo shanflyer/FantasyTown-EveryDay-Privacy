@@ -14,7 +14,7 @@
   ul{padding-left:18px;margin:6px 0}
   a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
   code{background:#f2f2f2;border-radius:4px;padding:1px 4px}
-  table{width:100%;border-collapse:collapse;margin:8px 0}
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:14px}
   th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top}
   th{background:#f6f7f8;text-align:left}
   .small{color:var(--muted);font-size:13px}
@@ -28,7 +28,7 @@
     <h2>一、引言与使用须知</h2>
     <p>感谢您体验《幻想小镇·日常》（下称“本游戏”）。我们依据相关法律法规保护您的个人信息。</p>
     <p><b>重要提示：</b>为保证本游戏的<b>基本运行、账号登录与云存档</b>等核心功能，我们会在下文所述范围内处理必要信息。<b>您点击“同意”即表示已阅读并接受本政策；如您不同意，请不要使用并立即卸载。</b></p>
-    <p class="small">本中国区体验版<b>未接入任何广告或商业化 SDK</b>（含 TapADN、Unity Ads/Mediation 等）。如未来功能变化，将显著提示并<b>重新征得您的同意</b>。</p>
+    <p class="small">本中国区体验版未接入广告/商业化变现组件（如广告聚合）。如未来功能变化，将显著提示并<b>重新征得您的同意</b>。</p>
   </section>
 
   <section>
@@ -63,7 +63,7 @@
         <tr>
           <td><b>稳定性与兼容性</b></td>
           <td>设备/系统信息（机型、系统版本）、运行日志（崩溃堆栈/异常时间）、基础网络信息</td>
-          <td>问题定位与性能优化，保障游戏稳定运行</td>
+          <td>问题定位与性能优化</td>
           <td>游戏运行过程中发生异常或您同意的诊断上报</td>
           <td>问题处理完成或达到最短必要保存期后</td>
         </tr>
@@ -86,27 +86,36 @@
   </section>
 
   <section>
-    <h2>四、第三方服务与 SDK（本版本实际接入）</h2>
-    <p>为实现账号体系与云存档，本版本仅接入以下服务；<b>未接入任何广告/跟踪类 SDK</b>：</p>
+    <h2>四、第三方服务与 SDK</h2>
+    <p>为实现账号体系、统计分析与运行框架，本版本使用以下第三方 SDK。各 SDK 可能基于其能力和您授予的系统权限处理信息，具体以其官方说明为准：</p>
     <table>
       <thead>
-        <tr><th>名称</th><th>场景/目的</th><th>处理信息与范围</th><th>隐私政策</th></tr>
+        <tr>
+          <th>第三方 SDK 名称</th>
+          <th>应用场景</th>
+          <th>可能收集的个人信息类型（按其功能与权限）</th>
+          <th>提供方</th>
+          <th>隐私政策链接</th>
+        </tr>
       </thead>
       <tbody>
         <tr>
-          <td>TapTap（登录/云存档）</td>
-          <td>账号登录、身份标识、云端存档同步与找回</td>
-          <td>平台提供的账号标识；为安全与兼容性所需的应用/设备运行信息。</td>
-          <td><a href="https://www.taptap.cn/privacy" target="_blank" rel="noopener">Tap 隐私政策</a></td>
+          <td><b>Tap SDK</b></td>
+          <td>游戏登录、数据分析、实时语音、防沉迷、内嵌动态、游戏好友、正版验证</td>
+          <td>读写存储权限、读取电话状态、IMSI、网络设备制造商、GAID、Android ID、OAID、IP 地址、MAC 地址、BSSID、设备应用列表、Wi-Fi 信息、设备版本、手机样式、系统版本、任务列表、录音、传感器信息</td>
+          <td>易玩（上海）网络科技有限公司</td>
+          <td><a href="https://developer.taptap.com/docs/sdk/start/agreement/" target="_blank" rel="noopener">查看</a></td>
         </tr>
         <tr>
-          <td>Unity 引擎运行时</td>
-          <td>游戏基础运行</td>
-          <td>与引擎运行相关的必要信息；传感器仅在相关玩法中短时使用。</td>
-          <td>—</td>
+          <td><b>Unity 3D</b></td>
+          <td>框架（引擎运行时）</td>
+          <td>读取设备信息（设备型号、系统名称、系统版本、MAC 地址、IMEI、Android ID）、访问相机、应用安装列表、任务列表、网络状态信息、传感器信息、运营商名称</td>
+          <td>Unity Technologies</td>
+          <td><a href="https://unity3d.com/cn/legal/privacy-policy" target="_blank" rel="noopener">查看</a></td>
         </tr>
       </tbody>
     </table>
+    <p class="small">说明：是否实际触发取决于您设备与系统版本、授权状态及具体玩法/功能。若您在系统中关闭相应权限或在游戏内关闭相关功能，相关数据处理将停止或受限。</p>
   </section>
 
   <section>
@@ -116,6 +125,8 @@
       <li><b>存储读写</b>：用于本地存档与配置文件读写。</li>
       <li><b>传感器（加速度计/陀螺仪）</b>：默认关闭；仅在进入相应玩法时启用，退出即停止。</li>
       <li><b>通知/震动（可选）</b>：用于重要更新提醒，如启用由系统再次授权。</li>
+      <li><b>麦克风（可选）</b>：用于实时语音等功能，仅在您使用相关功能时调用。</li>
+      <li><b>相机（可选）</b>：用于拍照/上传头像等，仅在您使用相关功能时调用。</li>
     </ul>
   </section>
 
